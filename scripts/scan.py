@@ -1,8 +1,8 @@
-import etherscan_scrape
 import inter_contract_utils
 import os
 import sys
-from sailfish.code.static_analysis.analysis import analyze_contracts
+sys.path.append(os.path.join(os.path.dirname(__file__), '../sailfish/code/static_analysis/analysis'))
+from contractlint import analyze_contracts
 
 # default parameters
 patterns = ['DAO', 'TOD']
@@ -29,9 +29,9 @@ if __name__ == '__main__':
     # scrape all interdependent contracts
     filename_to_address = inter_contract_utils.scrape_all_interdependent_contracts(contract_address)
     # create mapping file
-    inter_contract_utils.create_mapping_file(filename_to_address, contract_mapping_file)
+    inter_contract_utils.create_mapping_file(filename_to_address)
 
 
     # analyze contract at given address
-    initial_filename = filename_to_address.keys()[0]
+    initial_filename = list(filename_to_address.keys())[0]
     analyze_contracts(initial_filename, patterns, output_dir, range_type, dump_graph, static_only, call_heuristic, icc, contract_mapping_file, solver_type)
