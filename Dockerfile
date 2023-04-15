@@ -1,11 +1,12 @@
 FROM ubuntu:latest
 
 RUN apt-get update && \
-    apt-get install -y apt-utils software-properties-common locales locale-gen en_GB.UTF-8 python3 python3-pip python-is-python3 graphviz wget && \
+    apt-get install -y apt-utils software-properties-common locales libssl-dev python3 python3-pip python-is-python3 graphviz wget git && \
     apt-get --yes autoremove && \
     apt-get --yes autoclean && \
     apt-get clean && \
-    rm -rf /var/lib/apt/*
+    rm -rf /var/lib/apt/* && \
+    locale-gen en_GB.UTF-8
 
 ENV LANG en_GB.UTF-8
 ENV LANGUAGE en_GB:en  
@@ -30,3 +31,5 @@ RUN wget --quiet -O /usr/bin/cvc4 https://github.com/CVC4/CVC4/releases/download
 RUN cd /root/SmartContractScanning/sailfish/code/symbolic_execution && \
     git clean -fd && \
     ./build.py
+
+WORKDIR /root/SmartContractScanning
