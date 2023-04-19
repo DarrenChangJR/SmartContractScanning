@@ -1,3 +1,12 @@
 slither/core/declarations/function.py - is_protected() https://github.com/ucsb-seclab/slither-sailfish/commit/82ec32500527b32e867b641a9205f5ecbf19241e
 slither/solc_parsing/declarations/function.py - _fix_break_node() https://github.com/ucsb-seclab/slither-sailfish/commit/600395c0bc3b0605b1090b7124caeb4fd1c13529
 slither/solc_parsing/declarations/function.py - _parse_modifier() [IMPORTANT: not to ModifierSolc, instead to Modifier] https://github.com/ucsb-seclab/slither-sailfish/commit/e5c0d850595f890ac2477eb0ee37db805c9cf09d
+
+
+slither/slithir/operations/                 __str__() https://github.com/ucsb-seclab/slither-sailfish/commit/e42f03e25c6e48e560f85cb1f0e3f8a032bb8996
+                        assignment.py
+                        binary.py
+                        index.py
+                        init_array.py
+                        member.py
+                        unpack.py
