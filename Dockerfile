@@ -14,7 +14,7 @@ ENV LC_ALL en_GB.UTF-8
 ENV PYTHONIOENCODING UTF-8
 
 RUN yes | pip install slither-analyzer matplotlib networkx solidity-parser version-parser ujson pydot --quiet --exists-action i && \
-    solc-select install 0.8.19 && solc-select use 0.8.19
+    solc-select install 0.8.19 && solc-select install 0.4.0 && solc-select use 0.8.19
 
 WORKDIR /root
 
