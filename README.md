@@ -1,22 +1,22 @@
 # SmartContractScanning
 
 HKUS3Lab - Scripts, modifications of repos, and other utils for smart contract scanning.
-Currently,
 
 ## Table of Contents
 
 - [SmartContractScanning](#smartcontractscanning)
   - [Table of Contents](#table-of-contents)
-  - [Installation](#installation)
+  - [Installation & Setup](#installation)
   - [Usage](#usage)
   - [Contributing](#contributing)
   - [License](#license)
 
-## Installation
+## Installation & Setup
 
 1. Download the [Dockerfile](Dockerfile).
 2. Run `docker build -t <image_name> .` to build the image.
 3. Run `docker run -it <image_name>` to run the image.
+4. Run `pip show slither-analyzer` to find Slither's path and make changes to Slither as described in [this file](must_reads/slither_changes_required.txt).
 <!-- 1. `git clone --recurse-submodules` this repo
 1. Run `pip show slither-analyzer` to find the directory at which slither is installed, and make [these changes](must_reads/slither_changes_required.txt). -->
 
